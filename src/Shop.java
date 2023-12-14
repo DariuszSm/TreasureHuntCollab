@@ -17,7 +17,7 @@ public class Shop
     private double markdown;
     private Hunter customer;
 
-    //Constructor
+    //Constructor j
     public Shop(double markdown)
     {
         this.markdown = markdown;
