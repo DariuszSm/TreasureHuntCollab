@@ -41,6 +41,22 @@ public class Hunter
         return gold;
     }
 
+    /**
+     * Checks the game state of the hunter being called.
+     * Used to determine various states the hunter is based on its internal variables.
+     * @return All states:
+     * 0: Plain state that doesn't signify any state. Used by default if no other state is applicable.
+     * 1: Players has no gold, or is in debt.
+     */
+    public int checkGameState() {
+        if (gold <= 0) {
+            return 1;
+        }
+
+        // return a plain game state that allows for the game to continue as it was prior to this method call.
+        return 0;
+    }
+
     public void changeGold(int modifier)
     {
         gold += modifier;
