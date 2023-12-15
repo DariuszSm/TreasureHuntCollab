@@ -19,19 +19,19 @@ public class Treasure {
         int randomChance = (int) (Math.random() * 4) + 1;
         if (randomChance == 1)
         {
-            return "You found: " + treasure1;
+            return treasure1;
         }
         else if (randomChance == 2)
         {
-            return "You found: " + treasure2;
+            return treasure2;
         }
         else if (randomChance == 3)
         {
-            return "You found: " + treasure3;
+            return treasure3;
         }
         else
         {
-            return "You found no treasure!";
+            return null;
         }
     }
 }
