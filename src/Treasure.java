@@ -4,9 +4,10 @@
  * and 3, respectively)
  */
 public class Treasure {
-    private static String treasure1 = "Diamond Necklace";
-    private static String treasure2 = "Gold Watch";
-    private static String treasure3 = "Emerald Earrings";
+    public static final String TREASURE1 = "Diamond Necklace";
+    public static final String TREASURE2 = "Gold Watch";
+    public static final String TREASURE3 = "Emerald Earrings";
+    public static final int ALL_TREASURE_AMOUNT = 3;
 
     /**
      * findTreasures() method will randomize a number 1-4 in order to randomly choose which treasure the
@@ -19,15 +20,15 @@ public class Treasure {
         int randomChance = (int) (Math.random() * 4) + 1;
         if (randomChance == 1)
         {
-            return treasure1;
+            return TREASURE1;
         }
         else if (randomChance == 2)
         {
-            return treasure2;
+            return TREASURE2;
         }
         else if (randomChance == 3)
         {
-            return treasure3;
+            return TREASURE3;
         }
         else
         {

@@ -11,6 +11,7 @@ public class Hunter
     private String hunterName;
     private String kit;
     private int gold;
+    private int treasureCount;
 
     //Constructor
     /**
@@ -23,6 +24,7 @@ public class Hunter
         this.hunterName = hunterName;
         kit = "";
         gold = startingGold;
+        treasureCount = 0;
     }
 
     //Accessors
@@ -52,9 +54,21 @@ public class Hunter
         if (gold <= 0) {
             return 1;
         }
+        if (hasAllTreasures()) {
+            return 2;
+        }
 
         // return a plain game state that allows for the game to continue as it was prior to this method call.
         return 0;
+    }
+
+    /**
+     * Adds a treasure to the players inventory.
+     * @param treasure The treasure to be added.
+     */
+    public void addTreasure(String treasure) {
+        treasureCount++;
+        addItem(treasure);
     }
 
     public void changeGold(int modifier)
@@ -135,7 +149,7 @@ public class Hunter
      * @param item The item to be added to the kit.
      * @returns true if the item is not in the kit and has been added.
      */
-    public boolean addItem(String item)
+    private boolean addItem(String item)
     {
         if (!hasItemInKit(item))
         {
@@ -144,6 +158,14 @@ public class Hunter
         }
 
         return false;
+    }
+
+    /**
+     * Search the kit to see if the player has all possible treasures in the game.
+     * @return Returns true if all treasures are found in the kit.
+     */
+    public boolean hasAllTreasures() {
+        return treasureCount >= Treasure.ALL_TREASURE_AMOUNT;
     }
 
     /**

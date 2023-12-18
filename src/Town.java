@@ -10,7 +10,6 @@ public class Town
     private Terrain terrain;
     private String printMessage;
     private boolean toughTown;
-    private boolean treasureInTownCaught;
 
     //Constructor
     /**
@@ -31,8 +30,6 @@ public class Town
 
         // higher toughness = more likely to be a tough town
         toughTown = (Math.random() < toughness);
-
-        treasureInTownCaught = false;
     }
 
     public String getLatestNews()
@@ -128,6 +125,7 @@ public class Town
         }
     }
 
+<<<<<<< HEAD
     public void searchForTreasure() {
         String treasureFound = Treasure.findTreasure();
         if (treasureFound == null || treasureInTownCaught) {
@@ -138,12 +136,14 @@ public class Town
                 System.out.println("... but you already have one. The " + treasureFound + " was discarded.");
             } else {
                 System.out.println(", and it was added to your inventory.");
-                hunter.addItem(treasureFound);
                 treasureInTownCaught = true;
+                hunter.addTreasure(treasureFound);
             }
         }
     }
 
+=======
+>>>>>>> parent of b9fe7ab (add treasure hunting option)
     public String toString()
     {
         return "This nice little town is surrounded by " + terrain.getTerrainName() + ".";
