@@ -53,12 +53,12 @@ public class TreasureHunter
         System.out.print("Choose your difficulty level. Easy, medium, or hard.\nDifficulty Level (e/m/h): ");
         String difficulty = scanner.nextLine();
         String difficultyLevel;
-        if (difficulty.equals("e") || difficulty.equals("E"))
+        if (difficulty.equals("e") || difficulty.equals("E") || difficulty.equalsIgnoreCase("easy"))
         {
             easyMode = true;
             difficultyLevel = "Easy";
         }
-        else if (difficulty.equals("h") || difficulty.equals("H"))
+        else if (difficulty.equals("h") || difficulty.equals("H") || difficulty.equalsIgnoreCase("hard"))
         {
             hardMode = true;
             difficultyLevel = "Hard";
