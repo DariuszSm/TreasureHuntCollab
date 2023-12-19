@@ -10,12 +10,13 @@ public class Town
     private Terrain terrain;
     private String printMessage;
     private boolean toughTown;
+    private boolean treasureInTownCaught;
 
     //Constructor
     /**
      * The Town Constructor takes in a shop and the surrounding terrain, but leaves the hunter as null until one arrives.
-     * @param s The town's shoppe.
-     * @param t The surrounding terrain.
+     * @param shop The town's shoppe.
+     * @param toughness The surrounding terrain.
      */
     public Town(Shop shop, double toughness)
     {
@@ -39,7 +40,7 @@ public class Town
 
     /**
      * Assigns an object to the Hunter in town.
-     * @param h The arriving Hunter.
+     * @param hunter The arriving Hunter.
      */
     public void hunterArrives(Hunter hunter)
     {
@@ -125,7 +126,6 @@ public class Town
         }
     }
 
-<<<<<<< HEAD
     public void searchForTreasure() {
         String treasureFound = Treasure.findTreasure();
         if (treasureFound == null || treasureInTownCaught) {
@@ -142,8 +142,6 @@ public class Town
         }
     }
 
-=======
->>>>>>> parent of b9fe7ab (add treasure hunting option)
     public String toString()
     {
         return "This nice little town is surrounded by " + terrain.getTerrainName() + ".";
