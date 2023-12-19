@@ -11,6 +11,7 @@ public class TreasureHunter
     //Instance variables
     private Town currentTown;
     private Hunter hunter;
+    private boolean easyMode;
     private boolean hardMode;
 
     //Constructor
@@ -23,6 +24,7 @@ public class TreasureHunter
         currentTown = null;
         hunter = null;
         hardMode = false;
+        easyMode = false;
     }
 
     // starts the game; this is the only public method
@@ -48,12 +50,27 @@ public class TreasureHunter
         // set hunter instance variable
         hunter = new Hunter(name, 10);
 
-        System.out.print("Hard mode? (y/n): ");
-        String hard = scanner.nextLine();
-        if (hard.equals("y") || hard.equals("Y"))
+        System.out.print("Choose your difficulty level. Easy, medium, or hard.\nDifficulty Level (e/m/h): ");
+        String difficulty = scanner.nextLine();
+        String difficultyLevel;
+        if (difficulty.equals("e") || difficulty.equals("E"))
+        {
+            easyMode = true;
+            difficultyLevel = "Easy";
+        }
+        else if (difficulty.equals("h") || difficulty.equals("H"))
         {
             hardMode = true;
+            difficultyLevel = "Hard";
         }
+        else
+        {
+            easyMode = false;
+            hardMode = false;
+            difficultyLevel = "Medium";
+        }
+        System.out.println("The difficulty is set to " + difficultyLevel);
+
     }
 
     /**
@@ -92,14 +109,14 @@ public class TreasureHunter
     /**
      * Displays the menu and receives the choice from the user.<p>
      * The choice is sent to the processChoice() method for parsing.<p>
-     * This method will loop until the user chooses to exit.
+     * This method will loop until the user chooses to exit, or until the user wins/loses.
      */
     private void showMenu()
     {
         Scanner scanner = new Scanner(System.in);
         String choice = "";
 
-        while (!(choice.equals("X") || choice.equals("x")))
+        while (!(choice.equals("X") || choice.equals("x")) && hunter.checkGameState() == 0)
         {
             System.out.println();
             System.out.println(currentTown.getLatestNews());
@@ -116,6 +133,16 @@ public class TreasureHunter
             choice = scanner.nextLine();
             choice = choice.toUpperCase();
             processChoice(choice);
+        }
+
+        if (hunter.checkGameState() == 1)
+        {
+            System.out.println("You ran out of gold and the game ended!");
+        }
+
+        else if (hunter.checkGameState() == 2)
+        {
+            System.out.println("You found all the treasure and won! Congratulations!");
         }
     }
 
