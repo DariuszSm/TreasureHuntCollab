@@ -130,6 +130,10 @@ public class Town
         String treasureFound = Treasure.findTreasure();
         if (treasureFound == null || treasureInTownCaught) {
             System.out.println("You were unlucky, and found no treasure this time.");
+            if (treasureInTownCaught)
+            {
+                System.out.println("You already found the treasure in this town! Move onto the next one");
+            }
         } else {
             System.out.print("You found the " + treasureFound);
             if (hunter.hasItemInKit(treasureFound)) {
