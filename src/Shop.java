@@ -38,7 +38,7 @@ public class Shop
             System.out.println("Welcome to the shop! We have the finest wares in town.");
             System.out.println("Currently we have the following items:");
             System.out.println(inventory());
-            System.out.print("What're you lookin' to buy? ");
+            System.out.print("What're you lookin' to buy? (Type name of item or option #)");
             String item = scanner.nextLine();
             int cost = checkMarketPrice(item, true);
             if (cost == 0)
@@ -85,11 +85,11 @@ public class Shop
      */
     public String inventory()
     {
-        String str = "Water: " + WATER_COST + " gold\n";
-        str += "Rope: " + ROPE_COST + " gold\n";
-        str += "Machete: " + MACHETE_COST + " gold\n";
-        str += "Horse: " + HORSE_COST + " gold\n";
-        str += "Boat: " + BOAT_COST + " gold\n";
+        String str = "-----\nOption 1 | Water | " + WATER_COST + " gold\n-----\n";
+        str += "Option 2 | Rope | " + ROPE_COST + " gold\n-----\n";
+        str += "Option 3 | Machete | " + MACHETE_COST + " gold\n-----\n";
+        str += "Option 4 | Horse | " + HORSE_COST + " gold\n-----\n";
+        str += "Option 5 | Boat | " + BOAT_COST + " gold\n-----\n";
 
         return str;
     }
@@ -154,23 +154,23 @@ public class Shop
      */
     public int getCostOfItem(String item)
     {
-        if (item.equals("Water"))
+        if (item.equalsIgnoreCase("Water") || item.equals("1"))
         {
             return WATER_COST;
         }
-        else if (item.equals("Rope"))
+        else if (item.equalsIgnoreCase("Rope") || item.equals("2"))
         {
             return ROPE_COST;
         }
-        else if (item.equals("Machete"))
+        else if (item.equalsIgnoreCase("Machete") || item.equals("3"))
         {
             return MACHETE_COST;
         }
-        else if (item.equals("Horse"))
+        else if (item.equalsIgnoreCase("Horse") || item.equals("4"))
         {
             return HORSE_COST;
         }
-        else if (item.equals("Boat"))
+        else if (item.equalsIgnoreCase("Boat") || item.equals("5"))
         {
             return BOAT_COST;
         }
