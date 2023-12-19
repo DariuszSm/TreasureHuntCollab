@@ -40,6 +40,7 @@ public class Shop
             System.out.println(inventory());
             System.out.print("What're you lookin' to buy? (Type name of item or option #)");
             String item = scanner.nextLine();
+            item = formatItemString(item);
             int cost = checkMarketPrice(item, true);
             if (cost == 0)
             {
@@ -92,6 +93,32 @@ public class Shop
         str += "Option 5 | Boat | " + BOAT_COST + " gold\n-----\n";
 
         return str;
+    }
+
+    /**
+     * Formats the string used for item comparison and adding/selling
+     * @param input The input to be formatted
+     * @return A formatted item name
+     */
+    public String formatItemString(String input) {
+        if (input.equals("1")) {
+            input = "Water";
+        }
+        else if (input.equals("2")) {
+            input = "Rope";
+        }
+        else if (input.equals("3")) {
+            input = "Machete";
+        }
+        else if (input.equals("4")) {
+            input = "Horse";
+        }
+        else if (input.equals("5")) {
+            input = "Boat";
+        }
+
+        // turn item name to title format
+        return input.substring(0,1).toUpperCase() + input.substring(1).toLowerCase();
     }
 
     /**
