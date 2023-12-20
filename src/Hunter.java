@@ -13,6 +13,7 @@ public class Hunter
     private int gold;
     private int treasureCount;
     private String difficultyLevel;
+    private int goldNetGained;
 
     //Constructor
     /**
@@ -27,6 +28,7 @@ public class Hunter
         gold = startingGold;
         treasureCount = 0;
         this.difficultyLevel = difficultyLevel;
+        goldNetGained = 0;
     }
 
     //Accessors
