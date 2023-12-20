@@ -125,8 +125,6 @@ public class Town
                 goldDiff = 100;
             }
 
-            System.out.println("NTT: " + noTroubleChance);
-            System.out.println("GoldDiff: " + goldDiff);
 
             if (Math.random() > noTroubleChance)
             {
