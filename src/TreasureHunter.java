@@ -48,7 +48,14 @@ public class TreasureHunter
         String name = scanner.nextLine();
 
         // set hunter instance variable
-        hunter = new Hunter(name, 10);
+        if (easyMode)
+        {
+            hunter = new Hunter(name, 50);
+        }
+        else
+        {
+            hunter = new Hunter(name, 10);
+        }
 
         System.out.print("Choose your difficulty level. Easy, medium, or hard.\nDifficulty Level (e/m/h): ");
         String difficulty = scanner.nextLine();
