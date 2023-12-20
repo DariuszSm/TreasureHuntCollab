@@ -12,6 +12,7 @@ public class Shop
     private static final int MACHETE_COST = 6;
     private static final int HORSE_COST = 12;
     private static final int BOAT_COST = 20;
+    private static final int CHEAT_COST = 1;
 
     // instance variables
     private double markdown;
@@ -181,7 +182,11 @@ public class Shop
      */
     public int getCostOfItem(String item)
     {
-        if (item.equalsIgnoreCase("Water") || item.equals("1"))
+        if (customer.getDifficultyLevel().equals("Cheat"))
+        {
+            return CHEAT_COST;
+        }
+        else if (item.equalsIgnoreCase("Water") || item.equals("1"))
         {
             return WATER_COST;
         }
