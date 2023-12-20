@@ -125,8 +125,6 @@ public class Town
                 goldDiff = 100;
             }
 
-            System.out.println("NTT: " + noTroubleChance);
-            System.out.println("GoldDiff: " + goldDiff);
 
             if (Math.random() > noTroubleChance)
             {
@@ -144,7 +142,7 @@ public class Town
     }
 
     public void searchForTreasure() {
-        String treasureFound = Treasure.findTreasure();
+        String treasureFound = Treasure.findTreasure(hunter.getLuck());
         if (treasureFound == null || treasureInTownCaught) {
             System.out.println("You were unlucky, and found no treasure this time.");
             if (treasureInTownCaught)
