@@ -13,6 +13,7 @@ public class Hunter
     private int gold;
     private int treasureCount;
     private String difficultyLevel;
+    private static int luck = 30;
 
     //Constructor
     /**
@@ -48,6 +49,11 @@ public class Hunter
     public String getDifficultyLevel()
     {
         return difficultyLevel;
+    }
+
+    public int getLuck()
+    {
+        return luck;
     }
 
     /**
