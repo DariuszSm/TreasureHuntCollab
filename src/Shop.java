@@ -87,11 +87,24 @@ public class Shop
      */
     public String inventory()
     {
-        String str = "-----\nOption 1 | Water | " + WATER_COST + " gold\n-----\n";
-        str += "Option 2 | Rope | " + ROPE_COST + " gold\n-----\n";
-        str += "Option 3 | Machete | " + MACHETE_COST + " gold\n-----\n";
-        str += "Option 4 | Horse | " + HORSE_COST + " gold\n-----\n";
-        str += "Option 5 | Boat | " + BOAT_COST + " gold\n-----\n";
+        String str = "";
+        if (customer.getDifficultyLevel().equals("Cheat"))
+        {
+            str = "-----\nOption 1 | Water | " + CHEAT_COST + " gold\n-----\n";
+            str += "Option 2 | Rope | " + CHEAT_COST + " gold\n-----\n";
+            str += "Option 3 | Machete | " + CHEAT_COST + " gold\n-----\n";
+            str += "Option 4 | Horse | " + CHEAT_COST + " gold\n-----\n";
+            str += "Option 5 | Boat | " + CHEAT_COST + " gold\n-----\n";
+        }
+
+        else
+        {
+            str = "-----\nOption 1 | Water | " + WATER_COST + " gold\n-----\n";
+            str += "Option 2 | Rope | " + ROPE_COST + " gold\n-----\n";
+            str += "Option 3 | Machete | " + MACHETE_COST + " gold\n-----\n";
+            str += "Option 4 | Horse | " + HORSE_COST + " gold\n-----\n";
+            str += "Option 5 | Boat | " + BOAT_COST + " gold\n-----\n";
+        }
 
         return str;
     }

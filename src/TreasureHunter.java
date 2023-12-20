@@ -48,7 +48,8 @@ public class TreasureHunter
         String name = scanner.nextLine();
 
         System.out.print("Choose your difficulty level. Easy, medium, or hard.\nDifficulty Level (e/m/h): ");
-
+// testing
+        System.out.println("Password: hundred bucks");
         String userInput = scanner.nextLine();
         String difficultyLevel = "";
         if (userInput.equals("e") || userInput.equals("E") || userInput.equalsIgnoreCase("easy"))
