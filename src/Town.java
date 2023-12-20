@@ -119,6 +119,10 @@ public class Town
             {
                 noTroubleChance /= 2;
                 goldDiff *= 2;
+            } else if (hunter.getDifficultyLevel().equals("Cheat"))
+            {
+                noTroubleChance = 0;
+                goldDiff = 100;
             }
 
             System.out.println("NTT: " + noTroubleChance);
