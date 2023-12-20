@@ -13,7 +13,6 @@ public class TreasureHunter
     private Hunter hunter;
     private boolean easyMode;
     private boolean hardMode;
-    private String difficultyLevel;
 
     //Constructor
     /**
@@ -48,44 +47,32 @@ public class TreasureHunter
         System.out.print("What's your name, Hunter? ");
         String name = scanner.nextLine();
 
-        // set hunter instance variable
-        if (easyMode)
-        {
-            hunter = new Hunter(name, 50);
-        }
-        else
-        {
-            hunter = new Hunter(name, 10);
-        }
-
         System.out.print("Choose your difficulty level. Easy, medium, or hard.\nDifficulty Level (e/m/h): ");
-        String difficulty = scanner.nextLine();
-        if (difficulty.equals("e") || difficulty.equals("E") || difficulty.equalsIgnoreCase("easy"))
+
+        String userInput = scanner.nextLine();
+        String difficultyLevel = "";
+        if (userInput.equals("e") || userInput.equals("E") || userInput.equalsIgnoreCase("easy"))
         {
             easyMode = true;
             difficultyLevel = "Easy";
+            hunter = new Hunter(name, 50);
         }
-        else if (difficulty.equals("h") || difficulty.equals("H") || difficulty.equalsIgnoreCase("hard"))
+        else if (userInput.equals("h") || userInput.equals("H") || userInput.equalsIgnoreCase("hard"))
         {
             hardMode = true;
             difficultyLevel = "Hard";
+            hunter = new Hunter(name, 10);
         }
         else
         {
             easyMode = false;
             hardMode = false;
             difficultyLevel = "Medium";
+            hunter = new Hunter(name, 10);
         }
         System.out.println("The difficulty is set to " + difficultyLevel);
     }
 
-    /**
-     * Getter method to obtain the game's difficulty level
-     * @return String that represents difficulty
-     */
-    public String getDifficultyLevel() {
-        return difficultyLevel;
-    }
 
     /**
      * Creates a new town and adds the Hunter to it.
