@@ -12,6 +12,7 @@ public class Hunter
     private String kit;
     private int gold;
     private int treasureCount;
+    private String difficultyLevel;
 
     //Constructor
     /**
@@ -19,12 +20,13 @@ public class Hunter
      *
      * @param name The hunter's name.
      */
-    public Hunter(String hunterName, int startingGold)
+    public Hunter(String hunterName, int startingGold, String difficultyLevel)
     {
         this.hunterName = hunterName;
         kit = "";
         gold = startingGold;
         treasureCount = 0;
+        this.difficultyLevel = difficultyLevel;
     }
 
     //Accessors
@@ -41,6 +43,11 @@ public class Hunter
     public int getGold()
     {
         return gold;
+    }
+
+    public String getDifficultyLevel()
+    {
+        return difficultyLevel;
     }
 
     /**
