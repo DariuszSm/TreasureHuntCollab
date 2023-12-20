@@ -13,6 +13,7 @@ public class TreasureHunter
     private Hunter hunter;
     private boolean easyMode;
     private boolean hardMode;
+    private String difficultyLevel;
 
     //Constructor
     /**
@@ -59,7 +60,6 @@ public class TreasureHunter
 
         System.out.print("Choose your difficulty level. Easy, medium, or hard.\nDifficulty Level (e/m/h): ");
         String difficulty = scanner.nextLine();
-        String difficultyLevel;
         if (difficulty.equals("e") || difficulty.equals("E") || difficulty.equalsIgnoreCase("easy"))
         {
             easyMode = true;
@@ -77,7 +77,14 @@ public class TreasureHunter
             difficultyLevel = "Medium";
         }
         System.out.println("The difficulty is set to " + difficultyLevel);
+    }
 
+    /**
+     * Getter method to obtain the game's difficulty level
+     * @return String that represents difficulty
+     */
+    public String getDifficultyLevel() {
+        return difficultyLevel;
     }
 
     /**
