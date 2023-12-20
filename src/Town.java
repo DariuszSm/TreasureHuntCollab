@@ -142,7 +142,7 @@ public class Town
     }
 
     public void searchForTreasure() {
-        String treasureFound = Treasure.findTreasure();
+        String treasureFound = Treasure.findTreasure(hunter.getLuck());
         if (treasureFound == null || treasureInTownCaught) {
             System.out.println("You were unlucky, and found no treasure this time.");
             if (treasureInTownCaught)

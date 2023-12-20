@@ -15,9 +15,14 @@ public class Treasure {
      * @return a String that tells the user they either found a specific treasure or that they didn't find
      * any.
      */
-    public static String findTreasure()
+    public static String findTreasure(int luck)
     {
-        int randomChance = (int) (Math.random() * 4) + 1;
+        if (Math.random() > (luck/ 100.0))
+        {
+            return null;
+        }
+
+        int randomChance = (int) (Math.random() * 3) + 1;
         if (randomChance == 1)
         {
             return TREASURE1;
@@ -30,9 +35,6 @@ public class Treasure {
         {
             return TREASURE3;
         }
-        else
-        {
-            return null;
-        }
+        return null;
     }
 }
