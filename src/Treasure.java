@@ -10,8 +10,8 @@ public class Treasure {
     public static final int ALL_TREASURE_AMOUNT = 3;
 
     /**
-     * findTreasures() method will randomize a number 1-4 in order to randomly choose which treasure the
-     * user finds or if the user doesn't find any treasure. Each option has a 25% chance.
+     * findTreasures() method will randomly choose whether the user finds any treasure based on their luck
+     * If they do find a treasure, there is a 33% chance for each unique treasure
      * @return a String that tells the user they either found a specific treasure or that they didn't find
      * any.
      */
