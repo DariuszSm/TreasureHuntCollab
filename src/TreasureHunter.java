@@ -55,13 +55,18 @@ public class TreasureHunter
         {
             easyMode = true;
             difficultyLevel = "Easy";
-            hunter = new Hunter(name, 50, "Easy");
+            hunter = new Hunter(name, 50, difficultyLevel);
         }
         else if (userInput.equals("h") || userInput.equals("H") || userInput.equalsIgnoreCase("hard"))
         {
             hardMode = true;
             difficultyLevel = "Hard";
-            hunter = new Hunter(name, 10, "Hard");
+            hunter = new Hunter(name, 10, difficultyLevel);
+        }
+        else if (userInput.equals("hundred bucks"))
+        {
+            difficultyLevel = "Cheat";
+            hunter = new Hunter(name, 10, difficultyLevel);
         }
         else
         {
