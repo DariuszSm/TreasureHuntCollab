@@ -67,11 +67,12 @@ public class Town
         if (canLeaveTown)
         {
             String item = terrain.getNeededItem();
-            printMessage = "You used your " + item + " to cross the " + terrain.getTerrainName() + ".";
-            if (checkItemBreak())
-            {
-                hunter.removeItemFromKit(item);
-                printMessage += "\nUnfortunately, your " + item + " broke.";
+            if (!hunter.getDifficultyLevel().equals("Easy")) {
+                printMessage = "You used your " + item + " to cross the " + terrain.getTerrainName() + ".";
+                if (checkItemBreak()) {
+                    hunter.removeItemFromKit(item);
+                    printMessage += "\nUnfortunately, your " + item + " broke.";
+                }
             }
 
             return true;
@@ -94,7 +95,7 @@ public class Town
     public void lookForTrouble()
     {
         double noTroubleChance;
-        if (toughTown)
+        if (toughTown && !hunter.getDifficultyLevel().equals("Easy"))
         {
             noTroubleChance = 0.66;
         }
@@ -102,6 +103,8 @@ public class Town
         {
             noTroubleChance = 0.33;
         }
+
+
 
         if (Math.random() > noTroubleChance)
         {
@@ -111,6 +114,16 @@ public class Town
         {
             printMessage = "You want trouble, stranger!  You got it!\nOof! Umph! Ow!\n";
             int goldDiff = (int)(Math.random() * 10) + 1;
+
+            if (hunter.getDifficultyLevel().equals("Easy"))
+            {
+                noTroubleChance /= 2;
+                goldDiff *= 2;
+            }
+
+            System.out.println("NTT: " + noTroubleChance);
+            System.out.println("GoldDiff: " + goldDiff);
+
             if (Math.random() > noTroubleChance)
             {
                 printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
