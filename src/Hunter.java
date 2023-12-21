@@ -77,6 +77,12 @@ public class Hunter
         return 0;
     }
 
+    public int calculateLuck() {
+        int calcLuck = luck;
+        calcLuck += (goldNetGained/10)*2;
+        return calcLuck;
+    }
+
     /**
      * Adds a treasure to the players inventory.
      * @param treasure The treasure to be added.
@@ -93,6 +99,14 @@ public class Hunter
         {
             gold = 0;
         }
+    }
+
+    /**
+     * Changes the net gold gain from the casino
+     * @param amnt Amount to add to the net gain.
+     */
+    public void changeCasinoNetGain(int amnt) {
+        goldNetGained += amnt;
     }
 
     /**
