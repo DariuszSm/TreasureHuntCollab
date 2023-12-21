@@ -13,7 +13,7 @@ public class Hunter
     private int gold;
     private int treasureCount;
     private String difficultyLevel;
-    private static int luck = 30;
+    private static int luck = 75;
     private int goldNetGained;
 
     //Constructor

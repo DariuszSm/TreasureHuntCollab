@@ -131,6 +131,7 @@ public class TreasureHunter
             System.out.println(currentTown.getLatestNews());
             System.out.println("***");
             System.out.println(hunter);
+            System.out.println("Luck: " + hunter.calculateLuck());
             System.out.println(currentTown);
             System.out.println("(B)uy something at the shop.");
             System.out.println("(S)ell something at the shop.");
@@ -186,6 +187,10 @@ public class TreasureHunter
         else if (choice.equals("H") || choice.equals("h"))
         {
             currentTown.searchForTreasure();
+        }
+        else if (choice.equals("C") || choice.equals("c"))
+        {
+            casino.playGame(hunter);
         }
         else
         {

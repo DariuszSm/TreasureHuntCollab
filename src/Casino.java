@@ -38,6 +38,8 @@ public class Casino {
             int dice1 = (int) (Math.random()*6 + 1);
             int dice2 = (int) (Math.random()*6 + 1);
             int rollSum = dice1 + dice2;
+
+            System.out.println("The amount rolled is " + rollSum + "!");
             if (guess == rollSum)
             {
                 System.out.println("You won! You gain double your wager gold!");
