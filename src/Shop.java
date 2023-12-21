@@ -39,7 +39,7 @@ public class Shop
             System.out.println("Welcome to the shop! We have the finest wares in town.");
             System.out.println("Currently we have the following items:");
             System.out.println(inventory());
-            System.out.print("What're you lookin' to buy? (Type name of item or option #)");
+            System.out.print("What're you lookin' to buy? (Type name of item or option #): ");
             String item = scanner.nextLine();
             item = formatItemString(item);
             int cost = checkMarketPrice(item, true);
