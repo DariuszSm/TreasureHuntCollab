@@ -233,7 +233,7 @@ public class Shop
      */
     public int getBuyBackCost(String item)
     {
-        int cost = (int)(getCostOfItem(item) * markdown);
+        int cost = (int)(getCostOfItem(item) * (1 - markdown));
         return cost;
     }
 }
